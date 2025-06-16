@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_margin="20dp"
     tools:context=".MainActivity">
 
     <Button
@@ -14,5 +15,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="대화상자(Dialog) 출력"/>
-
+    <ImageView
+        android:id="@+id/imgv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:src="@drawable/tokboki"
+        android:adjustViewBounds="true"/>
 </LinearLayout>
