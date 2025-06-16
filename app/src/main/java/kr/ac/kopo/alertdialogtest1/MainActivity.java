@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 final String[] foodImages = {"tokboki", "mandu", "sundae", "odeng"};
                 AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
                 dlg.setTitle("인공지능소프트웨어과 공지사항");
-                dlg.setItems(foodItems, new DialogInterface.OnClickListener() {
+                dlg.setSingleChoiceItems(foodItems, 0, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         btn1.setText(foodItems[which]); // 선택한 음식 리스트 반환
@@ -58,6 +58,27 @@ public class MainActivity extends AppCompatActivity {
                             imgv.setImageResource(R.drawable.odeng);
                         }
                     }
+//                dlg.setItems(foodItems, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        btn1.setText(foodItems[which]); // 선택한 음식 리스트 반환
+//                        if(which == 0)
+//                        {
+//                            imgv.setImageResource(R.drawable.tokboki);
+//                        }
+//                        else if (which == 1)
+//                        {
+//                            imgv.setImageResource(R.drawable.mandu);
+//                        }
+//                        else if (which == 2)
+//                        {
+//                            imgv.setImageResource(R.drawable.sundae);
+//                        }
+//                        else
+//                        {
+//                            imgv.setImageResource(R.drawable.odeng);
+//                        }
+//                    }
                 });
 //                dlg.setMessage("정보처리산업기사 정기 2회 실기 6월 23일 ~ 26일까지 신청하시기 바랍니다.");
                 dlg.setIcon(R.drawable.firefox);
