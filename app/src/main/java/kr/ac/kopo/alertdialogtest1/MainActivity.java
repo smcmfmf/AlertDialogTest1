@@ -34,30 +34,41 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final String[] foodItems = {"떡볶이", "군만두", "순대", "어묵"};
-                final String[] foodImages = {"tokboki", "mandu", "sundae", "odeng"};
+//                final String[] foodImages = {"tokboki", "mandu", "sundae", "odeng"};
+                final int[] foodImages = {R.drawable.tokboki, R.drawable.mandu, R.drawable.sundae, R.drawable.odeng};
+                final boolean[] checkArray = {true, false, false, false};
                 AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
                 dlg.setTitle("인공지능소프트웨어과 공지사항");
-                dlg.setSingleChoiceItems(foodItems, 0, new DialogInterface.OnClickListener() {
+                dlg.setMultiChoiceItems(foodItems, checkArray, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        btn1.setText(foodItems[which]); // 선택한 음식 리스트 반환
-                        if(which == 0)
+                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                        if(isChecked)
                         {
-                            imgv.setImageResource(R.drawable.tokboki);
-                        }
-                        else if (which == 1)
-                        {
-                            imgv.setImageResource(R.drawable.mandu);
-                        }
-                        else if (which == 2)
-                        {
-                            imgv.setImageResource(R.drawable.sundae);
-                        }
-                        else
-                        {
-                            imgv.setImageResource(R.drawable.odeng);
+                            btn1.setText(foodItems[which]); // 선택한 음식 리스트 반환
+                            imgv.setImageResource(foodImages[which]);
                         }
                     }
+//                dlg.setSingleChoiceItems(foodItems, 0, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        btn1.setText(foodItems[which]); // 선택한 음식 리스트 반환
+//                        if(which == 0)
+//                        {
+//                            imgv.setImageResource(R.drawable.tokboki);
+//                        }
+//                        else if (which == 1)
+//                        {
+//                            imgv.setImageResource(R.drawable.mandu);
+//                        }
+//                        else if (which == 2)
+//                        {
+//                            imgv.setImageResource(R.drawable.sundae);
+//                        }
+//                        else
+//                        {
+//                            imgv.setImageResource(R.drawable.odeng);
+//                        }
+//                    }
 //                dlg.setItems(foodItems, new DialogInterface.OnClickListener() {
 //                    @Override
 //                    public void onClick(DialogInterface dialog, int which) {
